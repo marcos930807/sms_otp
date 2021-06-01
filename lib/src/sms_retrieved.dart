@@ -22,8 +22,12 @@ class SmsRetrieved {
 
   static Future<String?> stopListening() async {
     if (Platform.isAndroid) {
-      final String smsCode = await _channel.invokeMethod('stopListening');
-      return smsCode;
+      try {
+        final String smsCode = await _channel.invokeMethod('stopListening');
+        return smsCode;
+      } catch (e) {
+        return null;
+      }
     } else {
       return null;
     }

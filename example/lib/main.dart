@@ -14,6 +14,14 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
 
+  void intitTimer(bool value) {
+    //Aqui va tu codigo del timer;
+    int x = 0;
+    value ? x = 1 : x = 2;
+    //Es lo mismo que if(value) x=1 else x=2
+    
+  }
+
   @override
   void initState() {
     super.initState();
