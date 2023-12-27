@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms_otp.iml" filepath="$PROJECT_DIR$/.idea/modules/sms_otp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms_otp.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sms_otp.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms_otp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/sms_otp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sms_otp.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/sms_otp.unitTest.iml" />
     </modules>
   </component>
 </project>

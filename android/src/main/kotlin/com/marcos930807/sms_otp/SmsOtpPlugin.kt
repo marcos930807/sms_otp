@@ -2,10 +2,13 @@ package com.marcos930807.sms_otp
 
 import android.app.Activity
 import android.content.Context
+import android.content.Context.RECEIVER_EXPORTED
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.util.Log
 import androidx.annotation.NonNull
+import androidx.core.content.ContextCompat
 import com.google.android.gms.auth.api.phone.SmsRetriever
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
@@ -72,7 +75,12 @@ class SmsOtpPlugin : FlutterPlugin, MethodCallHandler, MySmsListener, ActivityAw
                 // Successfully started retriever, expect broadcast intent
                 Log.e(javaClass::getSimpleName.name, "task started")
                 receiver?.setSmsListener(this)
-                this.activity!!.registerReceiver(receiver, IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION))
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    this.activity!!.registerReceiver(receiver, IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION),RECEIVER_EXPORTED)
+                }else {
+                    this.activity!!.registerReceiver(receiver, IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION))
+                }
+
             }
         }
     }
